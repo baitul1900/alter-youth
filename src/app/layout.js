@@ -21,9 +21,8 @@ export default function RootLayout({ children }) {
           <LeftDrawer isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
           
 
-          <main className="pt-16">
-        {children}
-
+          <main>
+            {children}
           </main>
       </body>
     </html>

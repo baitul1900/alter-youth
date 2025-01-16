@@ -1,10 +1,14 @@
 "use client";
 
+import { menuItems } from "@/utils/menu";
 import clsx from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // Import usePathname for current route
 import React from "react";
 
 const LeftDrawer = ({ isOpen, onClose }) => {
   const drawerWidth = 250;
+  const pathname = usePathname(); // Get the current pathname
 
   return (
     <>
@@ -17,38 +21,45 @@ const LeftDrawer = ({ isOpen, onClose }) => {
             "opacity-0 pointer-events-none": !isOpen,
           }
         )}
-        onClick={onClose} // Close drawer when clicking the overlay
+        onClick={onClose}
       />
 
       {/* Drawer */}
       <div
         className={clsx(
-          "bg-gray-800 text-white fixed top-0 left-0 h-full transition-transform",
+          "bg-slate-50 pt-20 fixed top-0 left-0 h-full transition-transform z-40",
           { "translate-x-0": isOpen, "-translate-x-full": !isOpen }
         )}
         style={{ width: `${drawerWidth}px` }}
       >
-        <ul className="p-4 space-y-4">
-          <li>
-            <a href="/" className="block hover:underline">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/about" className="block hover:underline">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/services" className="block hover:underline">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="block hover:underline">
-              Contact
-            </a>
-          </li>
+        <ul className="pr-10 ps-4 space-y-2">
+          {menuItems?.map((menu) => {
+            const isActive = pathname === menu.routeName; // Compare current path with menu item route
+
+            return (
+              <li
+                key={menu.id}
+                className={clsx(
+                  "flex items-center py-2 px-3 gap-2 text-sm rounded-lg transition-all duration-300",
+                  {
+                    "bg-[#1DC468] text-white font-semibold": isActive, // Active style
+                    "hover:bg-[#1DC468] hover:text-white hover:opacity-80":
+                      !isActive, // Hover style
+                  }
+                )}
+              >
+                <div className="flex items-center justify-center w-6 h-6">
+                  {menu?.icon}
+                </div>
+                <Link
+                  href={menu?.inLink === true ? "https://play.google.com/store/apps/details?id=com.alteryouth.userapp&pli=1" : menu?.routeName}
+                  className="block"
+                >
+                  {menu?.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>
