@@ -1,0 +1,117 @@
+export const cardData = [
+  {
+    id: 1,
+    username: "@shhlab2728",
+    countryFlag: "🇦🇺",
+    joined: "Joined today",
+    scholarships: 1,
+    students: [
+      { name: "Sajid Hasan", class: "Class 4", school: "Jalalsh Government Primary School" },
+    ],
+  },
+  {
+    id: 2,
+    username: "@lubna7",
+    countryFlag: "🇺🇸",
+    joined: "Joined today",
+    scholarships: 7,
+    students: [
+      { name: "Shamim Mahmud", class: "Class 3", school: "Kallikapur Government Primary School" },
+      { name: "Mahim Islam", class: "Class 2", school: "Dakkhin Bhattapara Government Primary School" },
+      { name: "Sohag Islam", class: "Class 2", school: "Samer Danga Government Primary School" },
+      { name: "Rashed Islam", class: "Class 5", school: "Bakdokra 1 Government Primary School" },
+      { name: "Dilpa Rani", class: "Class 4", school: "Dolua-Latifgoch Government Primary School" },
+    ],
+  },
+  {
+    id: 3,
+    username: "@tasmina",
+    countryFlag: "🇺🇸",
+    joined: "Joined today",
+    scholarships: 2,
+    students: [
+      { name: "Salma Akter", class: "Class 2", school: "Bamonkumar Government Primary School" },
+      { name: "Morjina Begum", class: "Class 4", school: "Kallikapur Government Primary School" },
+    ],
+  },
+  {
+    id: 4,
+    username: "@bashir123",
+    countryFlag: "🇬🇧",
+    joined: "Joined today",
+    scholarships: 3,
+    students: [
+      { name: "Latifur Rahman", class: "Class 5", school: "Cheragi Government Primary School" },
+      { name: "Kamal Hossain", class: "Class 3", school: "Bakdokra Government Primary School" },
+      { name: "Sharmin Akter", class: "Class 1", school: "Samer Danga Government Primary School" },
+    ],
+  },
+  {
+    id: 5,
+    username: "@naimul99",
+    countryFlag: "🇨🇦",
+    joined: "Joined yesterday",
+    scholarships: 1,
+    students: [
+      { name: "Rina Akter", class: "Class 2", school: "Dakkhin Bhattapara Government Primary School" },
+    ],
+  },
+  {
+    id: 6,
+    username: "@fahim78",
+    countryFlag: "🇮🇳",
+    joined: "Joined today",
+    scholarships: 5,
+    students: [
+      { name: "Mehedi Hasan", class: "Class 4", school: "Jalalsh Government Primary School" },
+      { name: "Tania Akter", class: "Class 3", school: "Bakdokra Government Primary School" },
+      { name: "Raihan Ahmed", class: "Class 2", school: "Cheragi Government Primary School" },
+      { name: "Sabbir Hossain", class: "Class 5", school: "Dolua-Latifgoch Government Primary School" },
+    ],
+  },
+  {
+    id: 7,
+    username: "@sadia2023",
+    countryFlag: "🇧🇩",
+    joined: "Joined 2 days ago",
+    scholarships: 4,
+    students: [
+      { name: "Sumaiya Akter", class: "Class 3", school: "Cheragi Government Primary School" },
+      { name: "Maruf Hasan", class: "Class 1", school: "Dakkhin Bhattapara Government Primary School" },
+      { name: "Shimul Akter", class: "Class 2", school: "Bakdokra Government Primary School" },
+    ],
+  },
+  {
+    id: 8,
+    username: "@asha2024",
+    countryFlag: "🇦🇪",
+    joined: "Joined yesterday",
+    scholarships: 2,
+    students: [
+      { name: "Kamal Ahmed", class: "Class 4", school: "Kallikapur Government Primary School" },
+      { name: "Nusrat Jahan", class: "Class 3", school: "Dolua-Latifgoch Government Primary School" },
+    ],
+  },
+  {
+    id: 9,
+    username: "@tanvir777",
+    countryFlag: "🇵🇰",
+    joined: "Joined today",
+    scholarships: 6,
+    students: [
+      { name: "Sujon Mahmud", class: "Class 3", school: "Cheragi Government Primary School" },
+      { name: "Rafiq Islam", class: "Class 5", school: "Dakkhin Bhattapara Government Primary School" },
+      { name: "Shabnam Akter", class: "Class 1", school: "Jalalsh Government Primary School" },
+    ],
+  },
+  {
+    id: 10,
+    username: "@mim345",
+    countryFlag: "🇦🇺",
+    joined: "Joined today",
+    scholarships: 1,
+    students: [
+      { name: "Nazia Akter", class: "Class 2", school: "Cheragi Government Primary School" },
+    ],
+  },
+];

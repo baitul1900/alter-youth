@@ -25,6 +25,14 @@ body {
     display: none !important;
   }
 
+  .hero-header {
+    height: 165vh !important;
+  }
+
+  .header-text {
+    height: 340px !important;
+  }
+
   .desktop-nav {
     display: none !important;
   }

@@ -29,52 +29,55 @@ const ScholarshipAmountCounter = () => {
   };
 
   return (
-    <div className="flex justify-between mt-4">
-      {/* Counter Box */}
-      <div className="flex items-center gap-3 bg-slate-200 rounded-md">
-        {/* Minus Button */}
-        <button
-          className={clsx(
-            "p-2 rounded-md text-white",
-            count === 1
-              ? "bg-gray-300 cursor-not-allowed" // Disabled state
-              : count === limit
-              ? "bg-[#1DC468] hover:bg-[#17b758]" // Active state when count is at limit
-              : "bg-gray-400" // Default active state
-          )}
-          onClick={handleSubtract}
-          disabled={count === 1} // Disable when count is 1
-        >
-          <Icon name="FaMinus" />
-        </button>
+    <>
+      <h5 className="my-2 text-md font-semibold">Number of Scholarships</h5>
+      <div className="flex justify-between">
+        {/* Counter Box */}
+        <div className="flex items-center gap-3 bg-slate-200 rounded-md">
+          {/* Minus Button */}
+          <button
+            className={clsx(
+              "p-2 rounded-md text-white",
+              count === 1
+                ? "bg-gray-300 cursor-not-allowed" // Disabled state
+                : count === limit
+                ? "bg-[#1DC468] hover:bg-[#17b758]" // Active state when count is at limit
+                : "bg-gray-400" // Default active state
+            )}
+            onClick={handleSubtract}
+            disabled={count === 1} // Disable when count is 1
+          >
+            <Icon name="FaMinus" />
+          </button>
 
-        {/* Count Display */}
-        <div className="text-xl font-semibold">{count}</div>
+          {/* Count Display */}
+          <div className="text-xl font-semibold">{count}</div>
 
-        {/* Plus Button */}
-        <button
-          className={clsx(
-            "p-2 rounded-md text-white",
-            count === limit
-              ? "bg-gray-300 cursor-not-allowed" // Disabled state
-              : "bg-[#1DC468] hover:bg-[#17b758]" // Active state
-          )}
-          onClick={handleAdd}
-          disabled={count === limit} // Disable when count reaches the limit
-        >
-          <Icon name="FaPlus" />
-        </button>
+          {/* Plus Button */}
+          <button
+            className={clsx(
+              "p-2 rounded-md text-white",
+              count === limit
+                ? "bg-gray-300 cursor-not-allowed" // Disabled state
+                : "bg-[#1DC468] hover:bg-[#17b758]" // Active state
+            )}
+            onClick={handleAdd}
+            disabled={count === limit} // Disable when count reaches the limit
+          >
+            <Icon name="FaPlus" />
+          </button>
+        </div>
+        {/* Counter Box */}
+
+        {/* Amount Display */}
+        <div className="flex items-end">
+          <p className="text-xl font-bold pr-1">BDT</p>
+          <p className="text-xl font-bold">{amount}</p>
+          <p className="text-sm">/</p>
+          <p className="text-sm">month</p>
+        </div>
       </div>
-      {/* Counter Box */}
-
-      {/* Amount Display */}
-      <div className="flex items-end">
-        <p className="text-xl font-bold pr-1">BDT</p>
-        <p className="text-xl font-bold">{amount}</p>
-        <p className="text-sm">/</p>
-        <p className="text-sm">month</p>
-      </div>
-    </div>
+    </>
   );
 };
 
