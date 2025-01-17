@@ -32,7 +32,16 @@ const LeftDrawer = ({ isOpen, onClose }) => {
         )}
         style={{ width: `${drawerWidth}px` }}
       >
-        <ul className="pr-10 ps-4 space-y-2">
+        {/* Close Button (Visible only on small screens) */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 left-4 sm:block hidden p-2 bg-gray-300 text-black rounded-full hover:bg-gray-400"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+
+        <ul className="pr-10 ps-4 space-y-2 mt-8">
           {menuItems?.map((menu) => {
             const isActive = pathname === menu.routeName; // Compare current path with menu item route
 
@@ -52,7 +61,11 @@ const LeftDrawer = ({ isOpen, onClose }) => {
                   {menu?.icon}
                 </div>
                 <Link
-                  href={menu?.inLink === true ? "https://play.google.com/store/apps/details?id=com.alteryouth.userapp&pli=1" : menu?.routeName}
+                  href={
+                    menu?.inLink === true
+                      ? "https://play.google.com/store/apps/details?id=com.alteryouth.userapp&pli=1"
+                      : menu?.routeName
+                  }
                   className="block"
                 >
                   {menu?.name}

@@ -5,6 +5,9 @@ import LeftDrawer from "@/components/LeftDrawer";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
+import MobileNav from "@/components/MobileNav";
+
 
 export default function RootLayout({ children }) {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -12,10 +15,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
+
        
       >
+        <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
+        
         {/* Navbar */}
         <Navbar onToggleDrawer={() => setDrawerOpen(!isDrawerOpen)} />
+          <MobileNav onToggleDrawer={() => setDrawerOpen(!isDrawerOpen)} />
 
           {/* Drawer */}
           <LeftDrawer isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)} />

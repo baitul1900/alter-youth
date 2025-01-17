@@ -19,10 +19,12 @@ const Navbar = ({ onToggleDrawer }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+
   return (
     <div
       className={clsx(
-        "fixed top-0 left-0 w-full z-30 transition-all duration-300",
+        "fixed top-0 left-0 w-full z-30 transition-all duration-300 desktop-nav",
         scrolled ? "bg-white text-[#1DC468]" : "bg-transparent text-[#fff]"
       )}
     >

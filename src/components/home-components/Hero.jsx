@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import FormBox from "./FormBox";
 
 const textPart = {
   title: "Start your scholarship",
@@ -12,7 +13,7 @@ const Hero = () => {
   return (
     <div className="home-hero relative bg-[url('/assets/images/hero_pc.jpg')] bg-cover bg-center bg-no-repeat max-h-[60vh] min-h-[80vh]">
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      
 
       {/* Hero Content */}
       <div className="container mx-auto px-4 max-w-screen-xl">
@@ -24,6 +25,11 @@ const Hero = () => {
             <p className="text-lg md:text-xl text-white mt-4 z-10">
               {textPart?.subtitle}
             </p>
+          </div>
+
+
+          <div className="flex justify-center">
+            <FormBox />
           </div>
         </div>
       </div>
