@@ -5,10 +5,11 @@ import appleStore from "/public/assets/icons/appstore_small.svg";
 import googleStore from "/public/assets/icons/playstore_small.svg";
 import Link from "next/link";
 import Image from "next/image";
-import GlobalSwiper from "../GlobalSwiper";
 import transferDirectlyImage from "/public/assets/images/app_scholarship.jpg";
 import getSchoolReportsImage from "/public/assets/images/app_school.png";
 import iiterateCitizenImage from "/public/assets/images/app_graduation.png";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css"; // Import Splide styles
 
 const dataContent = [
   {
@@ -55,7 +56,7 @@ const MobileAppDownload = () => {
         </p>
       </div>
 
-      {/* the app donwlaod button section */}
+      {/* App download buttons */}
       <div className="flex justify-center gap-2 mt-4">
         <div>
           <Link
@@ -63,7 +64,6 @@ const MobileAppDownload = () => {
               "https://apps.apple.com/us/app/alteryouth-start-scholarships/id1569106859"
             }
             target="_blank"
-            className=""
           >
             <Image src={appleStore} alt="apple store" />
           </Link>
@@ -74,40 +74,46 @@ const MobileAppDownload = () => {
               "https://play.google.com/store/apps/details?id=com.alteryouth.userapp"
             }
             target="_blank"
-            className=""
           >
-            <Image src={googleStore} alt="apple store" />
+            <Image src={googleStore} alt="google store" />
           </Link>
         </div>
       </div>
-      {/* the app donwlaod button section end */}
 
-      <div className="mt-4">
-        <GlobalSwiper
-          slidesData={slidesData}
-          slidesPerView={1}
-          spaceBetween={0}
-          navigation={true}
-          pagination={false}
-          autoplay={false}
-          breakpoints={{
-            640: { slidesPerView: 3,
-              
-             },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+      {/* Splide Carousel */}
+      <div className="mt-10">
+        <Splide
+          options={{
+            type: "loop",
+            perPage: 3, // Show one full card and part of the next
+            gap: "20px", // Space between cards
+            padding: "1rem", // Padding around the carousel
+            pagination: false, // Disable pagination dots
+            arrows: false, // Enable navigation arrows
+            autoplay: false, // Autoplay slides
+            breakpoints: {
+              1024: { perPage: 3 }, // Show 3 slides on large screens
+              768: { perPage: 2 }, // Show 2 slides on medium screens
+              640: { perPage: 1 }, // Show 1.5 slides on small screens
+            },
           }}
-          customSlide={(data) => (
-            <div className="text-center rounded-lg p-6 min-h-32">
-              <div className="flex justify-center">
-                <Image src={data.imageSrc} alt={data.title} className="max-w-[200px]" />
+        >
+          {slidesData.map((data) => (
+            <SplideSlide key={data.id}>
+              <div className="text-center rounded-lg p-6 min-h-32">
+                <div className="flex justify-center">
+                  <Image
+                    src={data.imageSrc}
+                    alt={data.title}
+                    className="max-w-[200px]"
+                  />
+                </div>
+                <h3 className="text-lg font-bold mt-1">{data.title}</h3>
+                <p className="text-sm mt-1">{data.description}</p>
               </div>
-
-              <h3 className="text-lg font-bold mt-1">{data.title}</h3>
-              <p className="text-sm mt-1">{data.description}</p>
-            </div>
-          )}
-        />
+            </SplideSlide>
+          ))}
+        </Splide>
       </div>
     </section>
   );

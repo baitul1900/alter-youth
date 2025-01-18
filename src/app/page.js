@@ -1,3 +1,4 @@
+import CommunityImpact from "@/components/home-components/CommunityImpact";
 import Hero from "@/components/home-components/Hero";
 import MobileAppDownload from "@/components/home-components/MobileAppDownload";
 import ScholarshipCommunity from "@/components/home-components/ScholarshipCommunity";
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <MobileAppDownload/>
       <ScholarshipCommunity/>
+      <CommunityImpact/>
     </>
   );
 }
