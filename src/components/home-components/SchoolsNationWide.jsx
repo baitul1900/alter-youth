@@ -96,7 +96,7 @@ const SchoolsNationWide = () => {
               <div className="p-4">
                 <h2 className="text-md font-bold">{data?.name}</h2>
                 <div className="flex items-center gap-2">
-                  <Icon name="FaLocationDot" color='#1DC468'  />
+                  <Icon name="FaLocationDot" color="#1DC468" />
                   <p className="text-sm text-gray-600">
                     {data?.location}, Bangladesh
                   </p>
