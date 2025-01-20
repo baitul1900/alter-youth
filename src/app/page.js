@@ -1,3 +1,4 @@
+import Client from "@/components/home-components/Client";
 import CommunityImpact from "@/components/home-components/CommunityImpact";
 import Hero from "@/components/home-components/Hero";
 import MobileAppDownload from "@/components/home-components/MobileAppDownload";
@@ -19,6 +20,7 @@ export default function Home() {
       <ScholarshipEligibility/>
       <TeacherCard/>
       <ScholarshipApp/>
+      <Client/>
     </>
   );
 }

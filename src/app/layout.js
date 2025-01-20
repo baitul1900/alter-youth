@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
 import MobileNav from "@/components/MobileNav";
+import Footer from "@/components/Footer";
 
 
 export default function RootLayout({ children }) {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
           <main>
             {children}
           </main>
+          <Footer/>
       </body>
     </html>
   );
