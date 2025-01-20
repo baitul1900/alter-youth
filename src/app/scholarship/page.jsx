@@ -10,4 +10,4 @@ const ScholarShipPage = () => {
     );
 };
 
-export default scholarShipPage;
+export default ScholarShipPage;
